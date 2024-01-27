@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1f1cw1didp21"]
+[gd_scene load_steps=3 format=3 uid="uid://b1f1cw1didp21"]
 
 [ext_resource type="TileSet" uid="uid://buhcqg0pjcscx" path="res://scenes/blocks/block.tres" id="1_fap37"]
+[ext_resource type="Script" path="res://scenes/blocks/block_base.gd" id="1_tp37m"]
 
 [node name="BlockBase" type="Node2D"]
 position = Vector2(0, -32)
+script = ExtResource("1_tp37m")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_fap37")
