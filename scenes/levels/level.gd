@@ -26,7 +26,6 @@ func _ready():
 	block.position.y = -144
 	latest_block = block
 
-			
 func _process(_delta):
 	if is_gen:
 		is_gen = false
