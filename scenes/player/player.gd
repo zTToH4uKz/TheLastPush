@@ -7,6 +7,8 @@ const JUMP_VELOCITY = -150
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction: float
 
+@onready var camera: Camera2D = $"../Camera2D"
+
 @onready var jump_timer: Timer = $JumpTimer
 @onready var animation: AnimationPlayer = $AnimationPlayer
 

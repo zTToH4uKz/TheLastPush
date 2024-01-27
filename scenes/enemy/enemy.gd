@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var current_direction: Vector2 = Vector2.LEFT
-var speed: int = 25
+var speed: int = 30
 var is_dead: bool = false
 
 @onready var animation: AnimationPlayer = $AnimationPlayer

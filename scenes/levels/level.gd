@@ -4,11 +4,8 @@ var dash_scene: PackedScene = preload("res://scenes/player/dash.tscn")
 var blocks: Array = [
 	preload("res://scenes/blocks/block_0.tscn"),
 	preload("res://scenes/blocks/block_1.tscn"),
-	preload("res://scenes/blocks/block_2.tscn")
+	preload("res://scenes/blocks/block_2.tscn"),
 ]
-
-@onready var gen_timer = $Blocks/GenTimer
-@onready var del_timer = $Blocks/DelTimer
 
 var is_gen: bool = true
 var block
@@ -26,19 +23,23 @@ func _ready():
 	block.position.y = -144
 	latest_block = block
 
+func _add_block():
+	var local_block = blocks[randi() % blocks.size()].instantiate()
+	blocks_gen.append(blocks[randi() % blocks.size()].instantiate())
+	$Blocks.add_child(local_block)
+	local_block.position.y = latest_block.position.y -192
+	latest_block = local_block
+
 func _process(_delta):
 	if is_gen:
 		is_gen = false
-		var local_block = blocks[randi() % blocks.size()].instantiate()
-		blocks_gen.append(blocks[randi() % blocks.size()].instantiate())
-		$Blocks.add_child(local_block)
-		local_block.position.y = latest_block.position.y -192
-		latest_block = local_block
-		del_timer.start()
-		gen_timer.start()
+		_add_block()
+		_add_block()
+		
+func _del_block():
+	$Blocks.get_child(0).delete()
 
-func _on_gen_timer_timeout():
+func _on_camera_2d_change_gen():
+	print("Change")
+	_del_block()
 	is_gen = true
-
-func _on_del_timer_timeout():
-	$Blocks.get_child(2).delete()

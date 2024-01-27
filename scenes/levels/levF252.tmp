@@ -11,6 +11,12 @@ script = ExtResource("1_h414u")
 
 [node name="Blocks" type="Node2D" parent="."]
 
+[node name="GenTimer" type="Timer" parent="Blocks"]
+wait_time = 3.0
+
+[node name="DelTimer" type="Timer" parent="Blocks"]
+wait_time = 10.0
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_7fix6")
 format = 2
@@ -27,7 +33,7 @@ position_smoothing_speed = 100.0
 script = ExtResource("3_g6r55")
 
 [node name="Player" parent="." instance=ExtResource("3_x1xdk")]
-position = Vector2(-1, -67)
+position = Vector2(-2, -52)
 metadata/_edit_group_ = true
 
 [node name="Enemy" parent="." instance=ExtResource("4_7bqn8")]
@@ -38,6 +44,7 @@ position = Vector2(70, -101)
 
 [node name="Projectiles" type="Node2D" parent="."]
 
-[connection signal="change_gen" from="Camera2D" to="." method="_on_camera_2d_change_gen"]
+[connection signal="timeout" from="Blocks/GenTimer" to="." method="_on_gen_timer_timeout"]
+[connection signal="timeout" from="Blocks/DelTimer" to="." method="_on_del_timer_timeout"]
 [connection signal="dash_start" from="Player" to="." method="_on_player_dash_start"]
 [connection signal="shake_start" from="Player" to="Camera2D" method="_on_player_shake_start"]
