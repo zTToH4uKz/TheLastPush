@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctbc2qv6bcss5"]
+
+[ext_resource type="Texture2D" uid="uid://bfedhhx0b828n" path="res://resources/graphics/animation/dash_sheet.png" id="1_m38ff"]
+[ext_resource type="Script" path="res://scenes/player/dash.gd" id="1_sijxl"]
+
+[sub_resource type="Animation" id="Animation_lqdc2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_tsue2"]
+resource_name = "dash_down"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tbj2c"]
+_data = {
+"RESET": SubResource("Animation_lqdc2"),
+"dash_down": SubResource("Animation_tsue2")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8e05q"]
+radius = 5.0
+height = 12.0
+
+[node name="Dash" type="Node2D"]
+script = ExtResource("1_sijxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_m38ff")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tbj2c")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-0.5, 2)
+collision_layer = 8
+collision_mask = 4
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_8e05q")
