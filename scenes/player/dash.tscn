@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/player/dash.gd" id="1_sijxl"]
 
 [sub_resource type="Animation" id="Animation_lqdc2"]
-length = 0.001
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -12,10 +12,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 1,
-"values": [0]
+"values": []
 }
 
 [sub_resource type="Animation" id="Animation_tsue2"]
@@ -58,7 +58,7 @@ libraries = {
 }
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-0.5, 2)
+position = Vector2(0, 2)
 collision_layer = 8
 collision_mask = 4
 metadata/_edit_group_ = true
