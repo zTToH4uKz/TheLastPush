@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctbc2qv6bcss5"]
+[gd_scene load_steps=8 format=3 uid="uid://ctbc2qv6bcss5"]
 
 [ext_resource type="Texture2D" uid="uid://bfedhhx0b828n" path="res://resources/graphics/animation/dash_sheet.png" id="1_m38ff"]
 [ext_resource type="Script" path="res://scenes/player/dash.gd" id="1_sijxl"]
+[ext_resource type="Texture2D" uid="uid://dkmixe6mfehpy" path="res://resources/graphics/light/circle.png" id="3_daxd4"]
 
 [sub_resource type="Animation" id="Animation_lqdc2"]
 length = 0.4
@@ -69,5 +70,12 @@ shape = SubResource("CapsuleShape2D_8e05q")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 3)
+color = Color(1, 0.407843, 0.337255, 1)
+energy = 1.4
+texture = ExtResource("3_daxd4")
+texture_scale = 0.02
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

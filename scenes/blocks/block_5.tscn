@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b1f1cw1didp21" path="res://scenes/blocks/block_base.tscn" id="1_fikvv"]
 [ext_resource type="PackedScene" uid="uid://xpp741oj6tfx" path="res://scenes/enemy/enemy.tscn" id="2_wwr7m"]
-[ext_resource type="PackedScene" path="res://scenes/enemy/baf.tscn" id="3_ehh0x"]
+[ext_resource type="PackedScene" uid="uid://jyr87hu88r15" path="res://scenes/enemy/baf.tscn" id="3_ehh0x"]
 [ext_resource type="PackedScene" uid="uid://bduwo6jp4xa4c" path="res://scenes/enemy/ships.tscn" id="4_yvw3v"]
 
 [node name="Block5" instance=ExtResource("1_fikvv")]

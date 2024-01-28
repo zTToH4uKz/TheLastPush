@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6xatenyaoiwq"]
+[gd_scene load_steps=7 format=3 uid="uid://b6xatenyaoiwq"]
 
 [ext_resource type="PackedScene" uid="uid://b1f1cw1didp21" path="res://scenes/blocks/block_base.tscn" id="1_3ivxn"]
 [ext_resource type="PackedScene" uid="uid://xpp741oj6tfx" path="res://scenes/enemy/enemy.tscn" id="2_01xce"]
 [ext_resource type="PackedScene" path="res://scenes/enemy/spawner_right.tscn" id="3_pm1a6"]
 [ext_resource type="PackedScene" path="res://scenes/enemy/spawner_left.tscn" id="4_okegc"]
 [ext_resource type="PackedScene" uid="uid://bduwo6jp4xa4c" path="res://scenes/enemy/ships.tscn" id="5_6n3t8"]
+[ext_resource type="Texture2D" uid="uid://dkmixe6mfehpy" path="res://resources/graphics/light/circle.png" id="6_ie4ac"]
 
 [node name="Block4" instance=ExtResource("1_3ivxn")]
 
@@ -80,3 +81,21 @@ rotation = 3.14159
 [node name="Ships16" parent="Ships" index="15" instance=ExtResource("5_6n3t8")]
 position = Vector2(-72, -124)
 rotation = 3.14159
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="4"]
+position = Vector2(-85, -9)
+color = Color(1, 0.211765, 0.160784, 1)
+texture = ExtResource("6_ie4ac")
+texture_scale = 0.05
+
+[node name="PointLight2D2" type="PointLight2D" parent="." index="5"]
+position = Vector2(-85, -105)
+color = Color(1, 0.211765, 0.160784, 1)
+texture = ExtResource("6_ie4ac")
+texture_scale = 0.05
+
+[node name="PointLight2D3" type="PointLight2D" parent="." index="6"]
+position = Vector2(86, -56)
+color = Color(1, 0.211765, 0.160784, 1)
+texture = ExtResource("6_ie4ac")
+texture_scale = 0.05

@@ -1,9 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://bajo4ldr7rjk6"]
+[gd_scene load_steps=6 format=3 uid="uid://bajo4ldr7rjk6"]
 
 [ext_resource type="PackedScene" uid="uid://cv8e5bnfif5l8" path="res://scenes/enemy/bullet.tscn" id="1_114xj"]
 [ext_resource type="Script" path="res://scenes/enemy/bullet_left.gd" id="2_td1tc"]
+[ext_resource type="Texture2D" uid="uid://dkmixe6mfehpy" path="res://resources/graphics/light/circle.png" id="3_qq814"]
+
+[sub_resource type="Curve" id="Curve_dkg3k"]
+_data = [Vector2(0.00561798, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.285714), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_b3si8"]
+colors = PackedColorArray(0.617755, 0, 0.050783, 1, 0.762827, 0.270352, 0, 1)
 
 [node name="BulletLeft" instance=ExtResource("1_114xj")]
 script = ExtResource("2_td1tc")
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="0"]
+color = Color(0.72549, 0, 0, 1)
+texture = ExtResource("3_qq814")
+texture_scale = 0.02
+
+[node name="ParticleBullet" type="CPUParticles2D" parent="." index="1"]
+amount = 100
+lifetime = 0.25
+speed_scale = 0.3
+emission_shape = 1
+emission_sphere_radius = 3.0
+gravity = Vector2(980, 0)
+angle_min = -240.0
+angle_max = 21.9
+scale_amount_curve = SubResource("Curve_dkg3k")
+color_ramp = SubResource("Gradient_b3si8")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

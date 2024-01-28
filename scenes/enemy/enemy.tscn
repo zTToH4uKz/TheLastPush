@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://xpp741oj6tfx"]
+[gd_scene load_steps=13 format=3 uid="uid://xpp741oj6tfx"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_4jl5q"]
 [ext_resource type="Texture2D" uid="uid://bjo0f67n2fin7" path="res://resources/graphics/animation/enemie_bird_sheet.png" id="1_ee8gn"]
+[ext_resource type="Texture2D" uid="uid://dkmixe6mfehpy" path="res://resources/graphics/light/circle.png" id="2_kg6wp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_85mir"]
 radius = 7.0
@@ -123,6 +124,12 @@ height = 14.0
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
 script = ExtResource("1_4jl5q")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.827451, 0, 0, 1)
+energy = 2.0
+texture = ExtResource("2_kg6wp")
+texture_scale = 0.04
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
