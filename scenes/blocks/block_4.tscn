@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6xatenyaoiwq"]
+[gd_scene load_steps=5 format=3 uid="uid://b6xatenyaoiwq"]
 
 [ext_resource type="PackedScene" uid="uid://b1f1cw1didp21" path="res://scenes/blocks/block_base.tscn" id="1_3ivxn"]
 [ext_resource type="PackedScene" uid="uid://xpp741oj6tfx" path="res://scenes/enemy/enemy.tscn" id="2_01xce"]
+[ext_resource type="PackedScene" path="res://scenes/enemy/spawner_right.tscn" id="3_pm1a6"]
+[ext_resource type="PackedScene" path="res://scenes/enemy/spawner_left.tscn" id="4_okegc"]
 
 [node name="Block4" instance=ExtResource("1_3ivxn")]
 
@@ -10,3 +12,12 @@ layer_1/tile_data = PackedInt32Array(-655355, 196608, 2, -589819, 196608, 2, -52
 
 [node name="Enemy" parent="." index="1" instance=ExtResource("2_01xce")]
 position = Vector2(69, -72)
+
+[node name="SpawnerRight" parent="Bullets" index="0" instance=ExtResource("3_pm1a6")]
+position = Vector2(-77, -9)
+
+[node name="SpawnerRight2" parent="Bullets" index="1" instance=ExtResource("3_pm1a6")]
+position = Vector2(-77, -105)
+
+[node name="SpawnerLeft" parent="Bullets" index="2" instance=ExtResource("4_okegc")]
+position = Vector2(77, -57)
