@@ -10,6 +10,8 @@ var blocks: Array = [
 	preload("res://scenes/blocks/block_5.tscn"),
 ]
 
+var is_start: bool = false
+
 var is_gen: bool = true
 var block
 var blocks_gen: Array
@@ -40,8 +42,13 @@ func _process(delta):
 		is_gen = false
 		_add_block()
 		_add_block()
-	Globals.all_time -= delta
-	change_timer.emit()
+	
+	if Input.is_action_pressed("jump"):
+		is_start = true	
+	
+	if is_start:
+		Globals.all_time -= delta
+		change_timer.emit()
 	if Globals.all_time <= 0:
 		$PauseMenu.restart()
 		

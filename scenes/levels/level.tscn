@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://buhcqg0pjcscx" path="res://scenes/blocks/block.tres" id="2_7fix6"]
 [ext_resource type="Script" path="res://scenes/levels/Camera2D.gd" id="3_g6r55"]
 [ext_resource type="PackedScene" uid="uid://ic6m2wlanm13" path="res://scenes/player/player.tscn" id="3_x1xdk"]
-[ext_resource type="PackedScene" path="res://scenes/user interface/pause_menu.tscn" id="6_h4nno"]
+[ext_resource type="PackedScene" uid="uid://dxuahgd3u7ual" path="res://scenes/user interface/pause_menu.tscn" id="6_h4nno"]
 [ext_resource type="PackedScene" uid="uid://o2dq8t7wskvx" path="res://scenes/user interface/ui.tscn" id="6_j3h7v"]
 
 [node name="Level" type="Node2D"]

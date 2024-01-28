@@ -1,14 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://o2dq8t7wskvx"]
+[gd_scene load_steps=7 format=3 uid="uid://o2dq8t7wskvx"]
 
 [ext_resource type="Script" path="res://scenes/user interface/ui.gd" id="1_fth5b"]
+[ext_resource type="FontFile" uid="uid://c3vo5fofaow2g" path="res://resources/graphics/tileset/Minecraft Seven_2.ttf" id="2_kb6il"]
+
+[sub_resource type="Theme" id="Theme_iweyr"]
+default_font = ExtResource("2_kb6il")
 
 [sub_resource type="Theme" id="Theme_oary8"]
+default_font = ExtResource("2_kb6il")
 default_font_size = 50
 
 [sub_resource type="Theme" id="Theme_kpvoe"]
+default_font = ExtResource("2_kb6il")
 default_font_size = 30
 
 [sub_resource type="Theme" id="Theme_4pv6q"]
+default_font = ExtResource("2_kb6il")
 default_font_size = 30
 
 [node name="UI" type="CanvasLayer"]
@@ -43,12 +50,13 @@ show_percentage = false
 [node name="Label" type="Label" parent="Timer"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 4.1
+anchor_left = 4.3
 anchor_top = -0.6
 anchor_right = 4.5
 anchor_bottom = -0.1
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_iweyr")
 text = "25s
 "
 
@@ -64,7 +72,7 @@ grow_horizontal = 0
 [node name="Label" type="Label" parent="Space"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -3.2
+anchor_left = -4.0
 anchor_top = 1.0
 anchor_right = 3.5
 anchor_bottom = 1.0
