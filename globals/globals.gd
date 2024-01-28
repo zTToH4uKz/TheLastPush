@@ -18,3 +18,8 @@ var max_value: float = 25.0
 var all_time: float = 25.0:
 	set(value):
 		all_time = value
+
+func set_default():
+	all_time = 25.0
+	hit_value = 5
+	max_value = 25.0

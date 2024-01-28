@@ -43,11 +43,10 @@ func _process(delta):
 	Globals.all_time -= delta
 	change_timer.emit()
 	if Globals.all_time <= 0:
-		print("Lose")
+		$PauseMenu.restart()
 		
-	print("viewport y:", get_viewport_rect().size.y)
-	print("player y:", $Player.position.y)
-	print("camera y:", $Camera2D.position.y)
+	if Input.is_action_pressed("pause"):
+		$PauseMenu.pause()
 		
 func _del_block():
 	$Blocks.get_child(0).delete()
