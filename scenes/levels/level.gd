@@ -5,6 +5,9 @@ var blocks: Array = [
 	preload("res://scenes/blocks/block_0.tscn"),
 	preload("res://scenes/blocks/block_1.tscn"),
 	preload("res://scenes/blocks/block_2.tscn"),
+	preload("res://scenes/blocks/block_3.tscn"),
+	preload("res://scenes/blocks/block_4.tscn"),
+	preload("res://scenes/blocks/block_5.tscn"),
 ]
 
 var is_gen: bool = true
