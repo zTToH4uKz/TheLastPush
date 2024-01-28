@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjesuko03urpc"]
+[gd_scene load_steps=4 format=3 uid="uid://cjesuko03urpc"]
 
 [ext_resource type="PackedScene" uid="uid://b1f1cw1didp21" path="res://scenes/blocks/block_base.tscn" id="1_fikvv"]
 [ext_resource type="PackedScene" uid="uid://xpp741oj6tfx" path="res://scenes/enemy/enemy.tscn" id="2_wwr7m"]
+[ext_resource type="PackedScene" path="res://scenes/enemy/baf.tscn" id="3_ehh0x"]
 
 [node name="Block5" instance=ExtResource("1_fikvv")]
 
@@ -10,3 +11,6 @@ layer_1/tile_data = PackedInt32Array(-655355, 196608, 2, -589819, 196608, 2, -52
 
 [node name="Enemy" parent="TileMap" index="0" instance=ExtResource("2_wwr7m")]
 position = Vector2(69, 23)
+
+[node name="Baf" parent="." index="2" instance=ExtResource("3_ehh0x")]
+position = Vector2(-43, -112)
