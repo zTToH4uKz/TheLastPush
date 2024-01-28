@@ -8,6 +8,9 @@ var blocks: Array = [
 	preload("res://scenes/blocks/block_3.tscn"),
 	preload("res://scenes/blocks/block_4.tscn"),
 	preload("res://scenes/blocks/block_5.tscn"),
+	preload("res://scenes/blocks/block_6.tscn"),
+	preload("res://scenes/blocks/block_7.tscn"),
+	preload("res://scenes/blocks/block_8.tscn"),
 ]
 
 var is_start: bool = false
