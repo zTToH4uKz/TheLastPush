@@ -52,4 +52,4 @@ func _on_jump_timer_timeout():
 	jump_ready = true
 	
 func hit():
-	Globals.all_time -= 5.0
+	Globals.all_time -= Globals.hit_value

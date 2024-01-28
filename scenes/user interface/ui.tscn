@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://o2dq8t7wskvx"]
+[gd_scene load_steps=3 format=3 uid="uid://o2dq8t7wskvx"]
 
 [ext_resource type="Script" path="res://scenes/user interface/ui.gd" id="1_fth5b"]
+
+[sub_resource type="Theme" id="Theme_oary8"]
+default_font_size = 50
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_fth5b")
@@ -30,3 +33,37 @@ grow_horizontal = 2
 grow_vertical = 0
 max_value = 25.0
 show_percentage = false
+
+[node name="Label" type="Label" parent="Timer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 4.1
+anchor_top = -0.6
+anchor_right = 4.5
+anchor_bottom = -0.1
+grow_horizontal = 2
+grow_vertical = 2
+text = "25s
+"
+
+[node name="Space" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="Space"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.2
+anchor_top = 1.0
+anchor_right = 3.5
+anchor_bottom = 1.0
+offset_right = 40.0
+offset_bottom = 23.0
+theme = SubResource("Theme_oary8")
+text = "1000m
+"

@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7ddfb2mak50y"]
+[gd_scene load_steps=6 format=3 uid="uid://b7ddfb2mak50y"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_h414u"]
 [ext_resource type="TileSet" uid="uid://buhcqg0pjcscx" path="res://scenes/blocks/block.tres" id="2_7fix6"]
 [ext_resource type="Script" path="res://scenes/levels/Camera2D.gd" id="3_g6r55"]
 [ext_resource type="PackedScene" uid="uid://ic6m2wlanm13" path="res://scenes/player/player.tscn" id="3_x1xdk"]
 [ext_resource type="PackedScene" uid="uid://o2dq8t7wskvx" path="res://scenes/user interface/ui.tscn" id="6_j3h7v"]
-[ext_resource type="PackedScene" path="res://scenes/enemy/spawner_left.tscn" id="6_ssf20"]
-[ext_resource type="PackedScene" path="res://scenes/enemy/spawner_right.tscn" id="7_wcppp"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_h414u")
@@ -35,12 +33,6 @@ metadata/_edit_group_ = true
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="UI" parent="." instance=ExtResource("6_j3h7v")]
-
-[node name="SpawnerLeft" parent="." instance=ExtResource("6_ssf20")]
-position = Vector2(93, -40)
-
-[node name="SpawnerRight" parent="." instance=ExtResource("7_wcppp")]
-position = Vector2(-93, -75)
 
 [connection signal="change_timer" from="." to="UI" method="_on_level_change_timer"]
 [connection signal="change_gen" from="Camera2D" to="." method="_on_camera_2d_change_gen"]

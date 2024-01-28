@@ -48,7 +48,6 @@ func _process(delta):
 	print("viewport y:", get_viewport_rect().size.y)
 	print("player y:", $Player.position.y)
 	print("camera y:", $Camera2D.position.y)
-	var height = get_viewport_rect().size.y
 		
 func _del_block():
 	$Blocks.get_child(0).delete()
