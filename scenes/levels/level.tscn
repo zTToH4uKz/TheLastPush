@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7ddfb2mak50y"]
+[gd_scene load_steps=8 format=3 uid="uid://b7ddfb2mak50y"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_h414u"]
 [ext_resource type="TileSet" uid="uid://buhcqg0pjcscx" path="res://scenes/blocks/block.tres" id="2_7fix6"]
 [ext_resource type="Script" path="res://scenes/levels/Camera2D.gd" id="3_g6r55"]
 [ext_resource type="PackedScene" uid="uid://ic6m2wlanm13" path="res://scenes/player/player.tscn" id="3_x1xdk"]
-[ext_resource type="PackedScene" path="res://scenes/user interface/pause_menu.tscn" id="6_h4nno"]
+[ext_resource type="PackedScene" uid="uid://dxuahgd3u7ual" path="res://scenes/user interface/pause_menu.tscn" id="6_h4nno"]
 [ext_resource type="PackedScene" uid="uid://o2dq8t7wskvx" path="res://scenes/user interface/ui.tscn" id="6_j3h7v"]
+[ext_resource type="PackedScene" uid="uid://bduwo6jp4xa4c" path="res://scenes/enemy/ships.tscn" id="7_0uyff"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_h414u")
@@ -43,6 +44,9 @@ visible = false
 color = Color(0.533333, 0.333333, 0.0823529, 1)
 energy = 0.5
 blend_mode = 1
+
+[node name="Ships" parent="." instance=ExtResource("7_0uyff")]
+position = Vector2(-39, -28)
 
 [connection signal="change_timer" from="." to="UI" method="_on_level_change_timer"]
 [connection signal="change_gen" from="Camera2D" to="." method="_on_camera_2d_change_gen"]
