@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://jyr87hu88r15"]
+[gd_scene load_steps=9 format=3 uid="uid://jyr87hu88r15"]
 
 [ext_resource type="Script" path="res://scenes/enemy/baf.gd" id="1_mmw20"]
 [ext_resource type="Texture2D" uid="uid://bxdhijxi8ylft" path="res://resources/graphics/animation/baf_sheet.png" id="2_3gxap"]
 [ext_resource type="Texture2D" uid="uid://dkmixe6mfehpy" path="res://resources/graphics/light/circle.png" id="2_kgo14"]
+[ext_resource type="AudioStream" uid="uid://bdm2bkmnjx8ia" path="res://resources/sound/PickUpTLP.mp3" id="4_rf274"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jjn2g"]
 radius = 7.0
@@ -50,7 +51,7 @@ script = ExtResource("1_mmw20")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0, 0.513726, 0.0431373, 1)
-energy = 1.8
+energy = 1.3
 texture = ExtResource("2_kgo14")
 texture_scale = 0.03
 
@@ -70,4 +71,12 @@ libraries = {
 }
 autoplay = "idle"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_rf274")
+volume_db = -20.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.15
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

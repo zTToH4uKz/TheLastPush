@@ -43,6 +43,7 @@ func _on_damage_body_entered(body):
 
 func death():
 	Globals.death_bird += 1
+	$AudioStreamPlayer2D.play()
 	is_dead = true
 	if current_direction == Vector2.LEFT:
 		animation.play("death_left")

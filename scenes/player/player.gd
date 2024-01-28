@@ -24,6 +24,7 @@ func _physics_process(delta):
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and jump_ready:
+		$AudioStreamPlayer2D.play()
 		if direction == -1:
 			animation.play("jump_left")
 		else:
