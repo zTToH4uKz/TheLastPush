@@ -32,6 +32,7 @@ func _ready():
 	$Blocks.add_child(block)
 	block.position.y = -144
 	latest_block = block
+	$AudioStreamPlayer2D.play()
 
 func _add_block():
 	var local_block = blocks[randi() % blocks.size()].instantiate()
