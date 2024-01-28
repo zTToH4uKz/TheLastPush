@@ -4,6 +4,8 @@ func _ready():
 	hide()
 
 func pause():
+	$BirdBoard/Label.text = "Record Kill Bird - " + str(Globals.death_bird_record)
+	$TimeBoard/Label.text = "Record Lifetime - %.2fs" % [Globals.time_board_record]
 	get_tree().paused = true
 	show()
 

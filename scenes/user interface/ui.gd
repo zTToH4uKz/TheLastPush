@@ -9,7 +9,9 @@ func change_time():
 	$Timer/Label.text = "%.2fs" % [Globals.all_time]
 	$Bafs/MaxValue.text = "Max time - " + str(Globals.max_value) + "s"
 	$Bafs/HitValue.text = "Time for kill - " + str(Globals.hit_value) + "s"
-
+	$TimeBoard/Label.text = "Lifetime - %.2fs" % [Globals.time_board]
+	$BirdBoard/Label.text = "Kill bird - " + str(Globals.death_bird)
+	
 func _process(_delta):
 	$Space/Label.text = str(abs(int($"../Player".position.y/10))) + "m"
 

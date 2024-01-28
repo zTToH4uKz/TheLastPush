@@ -42,6 +42,7 @@ func _on_damage_body_entered(body):
 		death()
 
 func death():
+	Globals.death_bird += 1
 	is_dead = true
 	if current_direction == Vector2.LEFT:
 		animation.play("death_left")

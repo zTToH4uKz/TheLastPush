@@ -47,6 +47,7 @@ func _process(delta):
 		is_start = true	
 	
 	if is_start:
+		Globals.time_board += delta
 		Globals.all_time -= delta
 		change_timer.emit()
 	if Globals.all_time <= 0:
