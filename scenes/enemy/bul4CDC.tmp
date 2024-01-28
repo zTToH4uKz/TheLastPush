@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bajo4ldr7rjk6"]
+
+[ext_resource type="PackedScene" uid="uid://cv8e5bnfif5l8" path="res://scenes/enemy/bullet.tscn" id="1_114xj"]
+[ext_resource type="Script" path="res://scenes/enemy/bullet_left.gd" id="2_td1tc"]
+
+[node name="BulletLeft" instance=ExtResource("1_114xj")]
+script = ExtResource("2_td1tc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

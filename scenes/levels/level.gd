@@ -15,6 +15,8 @@ var block
 var blocks_gen: Array
 var latest_block
 
+signal change_timer
+
 func _on_player_dash_start():
 	var dash = dash_scene.instantiate()
 	dash.position = $Player.position
@@ -33,11 +35,20 @@ func _add_block():
 	local_block.position.y = latest_block.position.y -192
 	latest_block = local_block
 
-func _process(_delta):
+func _process(delta):
 	if is_gen:
 		is_gen = false
 		_add_block()
 		_add_block()
+	Globals.all_time -= delta
+	change_timer.emit()
+	if Globals.all_time <= 0:
+		print("Lose")
+		
+	print("viewport y:", get_viewport_rect().size.y)
+	print("player y:", $Player.position.y)
+	print("camera y:", $Camera2D.position.y)
+	var height = get_viewport_rect().size.y
 		
 func _del_block():
 	$Blocks.get_child(0).delete()

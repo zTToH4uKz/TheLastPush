@@ -50,3 +50,6 @@ func _physics_process(delta):
 
 func _on_jump_timer_timeout():
 	jump_ready = true
+	
+func hit():
+	Globals.all_time -= 5.0

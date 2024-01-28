@@ -33,6 +33,16 @@ func _process(delta):
 
 func _on_area_2d_area_entered(_area):
 	is_dead = true
+	Globals.all_time = clampf(Globals.all_time + 5.0, 0, Globals.max_value)
+	death()
+
+func _on_damage_body_entered(body):
+	if "hit" in body:
+		body.hit()
+		death()
+
+func death():
+	is_dead = true
 	if current_direction == Vector2.LEFT:
 		animation.play("death_left")
 	if current_direction == Vector2.RIGHT:
