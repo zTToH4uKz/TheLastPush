@@ -39,6 +39,12 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextEdit" type="TextEdit" parent="ButtonContinue"]
+offset_left = -175.0
+offset_top = -41.0
+offset_right = 215.0
+offset_bottom = 83.0
+
 [node name="Continue" type="Button" parent="ButtonContinue"]
 layout_mode = 1
 anchors_preset = 8
@@ -53,7 +59,7 @@ offset_bottom = 60.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_rxkri")
-text = "continue
+text = "CONTINUE
 "
 
 [node name="ButtonRestart" type="Control" parent="."]
@@ -70,7 +76,15 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextEdit" type="TextEdit" parent="ButtonRestart"]
+layout_mode = 0
+offset_left = -175.0
+offset_top = 97.0
+offset_right = 215.0
+offset_bottom = 225.0
+
 [node name="Restart" type="Button" parent="ButtonRestart"]
+modulate = Color(0.886275, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -84,7 +98,7 @@ offset_bottom = 63.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_35w6s")
-text = "restart
+text = "RESTART
 "
 
 [node name="TimeBoard" type="Control" parent="."]
@@ -111,6 +125,21 @@ offset_right = 348.0
 offset_bottom = 107.0
 theme = SubResource("Theme_exjxg")
 text = "Record Lifetime - "
+
+[node name="Label2" type="Label" parent="TimeBoard"]
+modulate = Color(0.870588, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.5
+anchor_top = 1.0
+anchor_right = 2.5
+anchor_bottom = 1.0
+offset_left = -86.0
+offset_top = 52.0
+offset_right = 348.0
+offset_bottom = 107.0
+theme = SubResource("Theme_exjxg")
+text = "Record"
 
 [node name="TextureRect" type="TextureRect" parent="TimeBoard"]
 layout_mode = 1
@@ -149,6 +178,21 @@ offset_right = 335.0
 offset_bottom = 160.0
 theme = SubResource("Theme_pq2yb")
 text = "Record Kill bird -"
+
+[node name="Label2" type="Label" parent="BirdBoard"]
+modulate = Color(0.870588, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.5
+anchor_top = 2.2
+anchor_right = 2.5
+anchor_bottom = 2.2
+offset_left = -84.0
+offset_top = 105.0
+offset_right = 335.0
+offset_bottom = 160.0
+theme = SubResource("Theme_pq2yb")
+text = "Record"
 
 [node name="TextureRect" type="TextureRect" parent="BirdBoard"]
 layout_mode = 1

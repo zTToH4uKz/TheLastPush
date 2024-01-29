@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo4fpy4xvnuri"]
+
+[ext_resource type="FontFile" uid="uid://c3vo5fofaow2g" path="res://resources/graphics/tileset/Minecraft Seven_2.ttf" id="1_8e8vk"]
+
+[node name="Notice" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_8e8vk")
+text = "W/Space - Jump
+A/D - Left/Right
+ESC - Pause"
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color(0, 0.576471, 0.905882, 1)
+offset_right = 160.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("1_8e8vk")
+text = "W/Space
+A/D 
+ESC "
